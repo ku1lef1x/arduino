@@ -6,7 +6,7 @@ void setup() {
 
   pinMode(boton,INPUT_PULLUP);
   pinMode(led, OUTPUT);
-  digitalWrite(led, LOW);
+  digitalWrite(led, LOW);    //comenzamos con el led apagado
 
 }
 
