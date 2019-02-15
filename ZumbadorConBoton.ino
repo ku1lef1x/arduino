@@ -3,9 +3,9 @@ int pulsador = 8;
  
 void setup() 
 {
-  pinMode(pinBuzzer, OUTPUT);
+  pinMode(pinBuzzer, OUTPUT);          //abrimos el pin del altavoz para salida
 
-  pinMode(pulsador, INPUT_PULLUP);
+  pinMode(pulsador, INPUT_PULLUP);     //abrimos pin pulsador para entrada
 }
  
 void loop() 
