@@ -1,3 +1,5 @@
+/*Copiar y pegar este codigo en el documento creado con nombre pitches.h*/
+
 /*************************************************
  * Public Constants
  *************************************************/
