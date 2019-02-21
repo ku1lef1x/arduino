@@ -1,8 +1,9 @@
 //Librerias necesarias para el funcionamiento del LCD
-#include  <Wire.h>
+
+#include  <Wire.h>                              //incluida en Arduino IDE
 #include  <LiquidCrystal_I2C.h>                 //debemos descargar esta libreria
 
-LiquidCrystal_I2C lcd(0x27,16,2);               //indicamos como es nuestro lcd
+LiquidCrystal_I2C lcd(0x27,16,2);               //indicamos como es nuestro lcd y creamos variable lcd del tipo de la liberia
  
 void setup()
 {
@@ -24,8 +25,7 @@ void setup()
  
 void loop()
 {
-  // EN EL CICLO PRINCIPAL SOLAMENTE RECORREMOS EL MENSAJE DE UN LADO A OTRO
-  // Variable para conteo de ciclos
+   // Variable para conteo de recorridos
   int i;
  
   // Desplazar la pantalla a la derecha 5 veces
