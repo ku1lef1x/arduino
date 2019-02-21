@@ -1,9 +1,12 @@
-#include <LiquidCrystal_I2C.h>
-#include <Wire.h>
-#include <Keypad.h>
+#include <LiquidCrystal_I2C.h>            //libreria para LCD
+#include <Wire.h>                         //libreria necesaria
+#include <Keypad.h>                       //libreria para el teclado
 
-LiquidCrystal_I2C lcd (0x27, 16, 2);
 
+LiquidCrystal_I2C lcd (0x27, 16, 2);      //indicamos tipo de teclado con variable lcd
+
+
+//configuracion teclado
 const byte filas = 4;
 const byte columnas = 4;
 byte pinsFilas[filas] =  {8, 7, 6, 5};        //en orden: F1, F2, F3, F4        F=filas
@@ -17,11 +20,11 @@ char teclas [filas][columnas] = {
   {'*', '0', '#', 'D'}
 };
 
-Keypad teclado = Keypad (makeKeymap(teclas), pinsFilas, pinsColumnas, filas, columnas);
+Keypad teclado = Keypad (makeKeymap(teclas), pinsFilas, pinsColumnas, filas, columnas);       //variable teclado de tipo Keypad
+//fin configuracion teclado
+
 char tecla;
 char letra;
-
-// fin librerias necesarias para teclado y LCD 
 
 void setup() {
 
@@ -37,7 +40,7 @@ void loop() {
   if (tecla != NO_KEY){                 //si pulsamos el teclado:
 
     lcd.print(tecla);                   //mostramos tecla pulsada en el LCD
-    delay(1000);                        //dura un segundo y limpia el lcd para muestra nueva pulsacion
+    delay(1000);                        //dura un segundo y limpia el lcd para mostrar nueva pulsacion
     lcd.clear();
   }
 
