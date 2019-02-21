@@ -18,32 +18,34 @@ char teclas [filas][columnas] = {
 };
 
 Keypad teclado = Keypad (makeKeymap(teclas), pinsFilas, pinsColumnas, filas, columnas);
+//fin librerias necesarias
+
 char tecla;
 
 
 void setup() {
-  lcd.init();
-  lcd.backlight();
+  lcd.init();          //iniciamos lcd
+  lcd.backlight();    //damos brillo  
   lcd.clear();
  
 }
 
 void loop() {
  
-  tecla = teclado.getKey();
+  tecla = teclado.getKey();                   //variable tecla = a lo que pulsemos en teclado
 
-  if (tecla != NO_KEY){
-    if (tecla == 50){
+  if (tecla != NO_KEY){                       //detecta que se este pulsando una tecla
+    if (tecla == 50){                         //queremos que contraseña = 2, como recoge datos en ASCII, 2 = 50 (2+48)
       lcd.setCursor(0,1);
-      lcd.println("CORRECTO");
+      lcd.println("CORRECTO");                //nos admite el accedo
       delay(1000);
       lcd.clear();
-      lcd.print("Bienvenido");
+      lcd.print("Bienvenido");               //muestra mensaje de bienvenida
       delay(2000);
       lcd.clear();
       
     }
-    else{
+    else{                                     //en caso de no usar el pass correcto no muestra INCORRECTO
       lcd.setCursor(0,1);
       lcd.println("INCORRECTO");
       delay(4000);
