@@ -21,27 +21,23 @@ Keypad teclado = Keypad (makeKeymap(teclas), pinsFilas, pinsColumnas, filas, col
 char tecla;
 char letra;
 
+// fin librerias necesarias para teclado y LCD 
+
 void setup() {
 
-  lcd.init();
-  lcd.backlight();
-  //Serial.begin(9600);
-
+  lcd.init();                 //iniciamos LCD
+  lcd.backlight();            //damos brillo
+  
 }
 
 void loop() {
 
-  tecla = teclado.getKey();
-  //letra = Serial.read();
+  tecla = teclado.getKey();             //variable tecla = lo que pulsemos en teclado
+ 
+  if (tecla != NO_KEY){                 //si pulsamos el teclado:
 
-  //lcd.setCursor(3,0);
-  //lcd.print("Hola Buasi");
-  
-
-  if (tecla != NO_KEY){
-
-    lcd.print(tecla);
-    delay(1000);
+    lcd.print(tecla);                   //mostramos tecla pulsada en el LCD
+    delay(1000);                        //dura un segundo y limpia el lcd para muestra nueva pulsacion
     lcd.clear();
   }
 
